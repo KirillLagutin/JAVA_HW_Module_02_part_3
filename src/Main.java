@@ -6,6 +6,8 @@ import java.util.Scanner;
  ■заполнение матрицы с клавиатуры;
  ■заполнение случайными значениями;
  ■отображение матрицы;
+ ■поиск максимального и минимального элемента;
+ ■подсчет среднеарифметического значения.
  */
 
 public class Main {
@@ -28,10 +30,16 @@ public class Main {
         switch (choice){
             case 1 -> matrix.initRandomMatrix();
             case 2 -> matrix.initMatrix();
-            default -> System.out.println("Неверный ввод, вывожу ноли!");
+            default -> System.out.println("\nНеверный ввод, вывожу ноли!");
         }
 
-        System.out.println("Полученная Матрица:");
+        System.out.println("\nПолученная Матрица:");
         matrix.showMatrix();
+
+        System.out.println("\nМинимум и максимум Матрицы:");
+        matrix.maxMin();
+
+        System.out.printf("\nСреднеарифметическое = %.2f", matrix.average());
+        System.out.println();
     }
 }
